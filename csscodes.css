@@ -1,0 +1,265 @@
+@import url('https://fonts.google.com/specimen/Space+Grotesk');
+
+:root {
+ --Red: hsl(0, 100%, 66%) ;
+ --White: hsl(0, 0%, 100%) ;
+--Light-grayish-violet: hsl(270, 3%, 87%) ;
+--Dark-grayish-violet: hsl(279, 6%, 55%) ;
+--Very-dark-violet: hsl(278, 68%, 11%) ; 
+
+}
+
+*,*>* {
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.left-section {
+    min-height: 100vh;
+    width: 40%;
+    background-image: url('images\bg-main-desktop.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    
+    
+}
+
+.cards {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    left: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.front-card {
+    position: relative;
+    transform: translateX(-100px);
+}
+
+.card-logo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.number {
+    position: absolute;
+    color: var(--White);
+    bottom: 5rem;
+    left: 1rem;
+    letter-spacing: 2px;
+}
+
+.card-info {
+    position: absolute;
+    bottom: 2rem;
+    left: 1rem;
+    right: 3rem;
+    display: flex;
+    color: var(--White);
+    justify-content: space-between;
+}
+
+.back-card{
+    position: relative;
+}
+
+.error{
+    border: 2px solid var(--Red);
+    
+}
+
+
+.errormessage{
+    gap: 0 ;
+}
+
+.errormessage::after {
+    color: var(--Red);
+    margin-top: 0.2rem;
+     content: "Can't be blank";
+}
+
+
+.cvc {
+    position: absolute;
+    right: 3.5rem;
+    top: 7rem;
+    color: var(--Light-grayish-violet);
+
+}
+
+.right-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.right-section form{
+    display: grid;
+    gap: 1rem;
+    width: 350px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,1fr);
+    
+}
+
+label{
+    color: var(--Very-dark-violet);
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+}
+
+input{
+    padding: 0.5rem;
+    font-size: 18px;
+    border: 1px solid var(--Dark-grayish-violet);
+    border-radius: 6px;
+}
+
+input::-webkit-outer-spin-button, 
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input::placeholder{
+    font-family: inherit;
+    color: var(--Dark-grayish-violet);
+}
+
+input:focus{
+    outline-color: hsl(249,99%,64%);
+}
+
+.grid-1{
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 span;
+}
+
+.grid-2{
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 span;
+}
+
+.grid-3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-4{
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 span;
+}
+
+.card-information {
+    display: flex;
+    grid-column: 2 span;
+    gap: 1 rem;
+}
+
+.card-date {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 span;
+}
+
+.card-date .two-input {
+    display: flex;
+}
+
+.two-input div {
+    flex-direction: column;
+}
+
+.card-date div input {
+    width: 70px;
+    margin-inline: 0.5rem;
+    margin-left: 0;
+
+}
+
+.card-cvc {
+    width: 100%;
+}
+
+form button {
+    grid-column: 2 span;
+    font-size: 18px;
+    height: 50px;
+    color: var(--White);
+    border-radius: 6px; 
+    background-color: var(--Very-dark-violet);
+    cursor: pointer;
+}
+
+.thanks{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.thanks h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.thanks p {
+    font-size: 18px;
+    color: var(--Dark-grayish-violet);
+}
+.thanks button {
+    color: var(--White);
+    width: 100%;
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 18px;
+    background-color: var(--Very-dark-violet);
+    cursor: pointer;
+}
+.password-manager-link {
+    position: fixed; /* Fix the element to the viewport, it won't scroll with the page content */
+    top: 10px; /* Set the top position to 10 pixels from the top */
+    right: 10px; /* Set the right position to 10 pixels from the right */
+    padding: 10px 15px; /* Add some padding to the link */
+    background-color: #f0f0f0; /* Set the background color to light gray */
+    border: 1px solid #ddd; /* Add a 1px solid border in light gray */
+    border-radius: 5px; /* Add a 5px rounded corner to the link */
+    text-decoration: none; /* Remove underline from the text link */
+    color: #333; /* Set the link text color to dark gray */
+  }
+  
+  .password-manager-link:hover {
+    background-color: #ddd; /* Change the background color slightly on hover */
+    cursor: pointer; /* Set the cursor to pointer on hover */
+  }
+  
